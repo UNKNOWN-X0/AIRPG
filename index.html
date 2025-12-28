@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI RPG Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 AI RPG Adventure</h1>
+            <div class="api-setup" id="apiSetup">
+                <input type="password" id="apiKeyInput" placeholder="Enter your Anthropic API Key">
+                <button id="saveApiKey">Save Key</button>
+                <p class="api-hint">Get your API key from <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></p>
+            </div>
+        </header>
+
+        <div class="game-area" id="gameArea" style="display: none;">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">❤️ Health:</span>
+                    <span id="health">100</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">⚔️ Attack:</span>
+                    <span id="attack">10</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">🛡️ Defense:</span>
+                    <span id="defense">5</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">🪙 Gold:</span>
+                    <span id="gold">50</span>
+                </div>
+            </div>
+
+            <div class="story-panel" id="storyPanel">
+                <div class="message ai-message">
+                    Welcome, brave adventurer! Your journey begins in a mysterious land filled with danger and treasure. What will you do?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="playerInput" placeholder="What do you do? (e.g., explore the forest, check inventory, attack)" disabled>
+                <button id="sendAction" disabled>Send</button>
+            </div>
+
+            <div class="quick-actions">
+                <button class="quick-btn" data-action="look around">👁️ Look Around</button>
+                <button class="quick-btn" data-action="check inventory">🎒 Inventory</button>
+                <button class="quick-btn" data-action="rest">💤 Rest</button>
+                <button class="quick-btn" data-action="continue adventure">➡️ Continue</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>The AI dungeon master is thinking...</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
