@@ -1,0 +1,68 @@
+{
+  ".github/workflows/jekyll-docker.yml": {
+    "mtime": 1792756192.7249162,
+    "seen": 1792798298.0233972,
+    "ast_hash": "29fe146da84567bcc68665ce404ff135",
+    "semantic_hash": "29fe146da84567bcc68665ce404ff135"
+  },
+  "js/adventure.js": {
+    "mtime": 1792792137.9420867,
+    "seen": 1792798298.023401,
+    "ast_hash": "61b848e18f3d0cbae8a29183968a85dc",
+    "semantic_hash": "61b848e18f3d0cbae8a29183968a85dc"
+  },
+  "js/api.js": {
+    "mtime": 1792792104.959636,
+    "seen": 1792798298.023403,
+    "ast_hash": "3e8abb83cbc10e7207169c8b8eac1b2a",
+    "semantic_hash": "3e8abb83cbc10e7207169c8b8eac1b2a"
+  },
+  "js/dom.js": {
+    "mtime": 1792758084.5864975,
+    "seen": 1792798298.0234041,
+    "ast_hash": "38cb614211a70f437acf4271513da5d3",
+    "semantic_hash": "38cb614211a70f437acf4271513da5d3"
+  },
+  "js/setup.js": {
+    "mtime": 1792792104.9789603,
+    "seen": 1792798298.023405,
+    "ast_hash": "9210f62b55a036e0bb702a5ef7e3c84c",
+    "semantic_hash": "9210f62b55a036e0bb702a5ef7e3c84c"
+  },
+  "js/state.js": {
+    "mtime": 1792792104.982539,
+    "seen": 1792798298.023406,
+    "ast_hash": "7f3d4344622a0cb1a66746c27d6101e4",
+    "semantic_hash": "7f3d4344622a0cb1a66746c27d6101e4"
+  },
+  "js/stats.js": {
+    "mtime": 1792792104.9906776,
+    "seen": 1792798298.0234072,
+    "ast_hash": "f62b136890b2169afe0c6969188b03e6",
+    "semantic_hash": "f62b136890b2169afe0c6969188b03e6"
+  },
+  "js/ui.js": {
+    "mtime": 1792758084.5869274,
+    "seen": 1792798298.0234082,
+    "ast_hash": "0ae43188845163a63b44b2dc07945678",
+    "semantic_hash": "0ae43188845163a63b44b2dc07945678"
+  },
+  "tests/functionality.test.cjs": {
+    "mtime": 1792792138.277793,
+    "seen": 1792798298.0234082,
+    "ast_hash": "f383f8a03dd2168e3f03f3cc3f34438e",
+    "semantic_hash": "f383f8a03dd2168e3f03f3cc3f34438e"
+  },
+  "README.md": {
+    "mtime": 1792792947.7702115,
+    "seen": 1792798298.023409,
+    "ast_hash": "42ff8ee6bc1675093034b779fbbe1f84",
+    "semantic_hash": "42ff8ee6bc1675093034b779fbbe1f84"
+  },
+  "index.html": {
+    "mtime": 1792792104.9295568,
+    "seen": 1792798298.0234098,
+    "ast_hash": "d06c614bff93e6b590fde2d3ef3fe4ba",
+    "semantic_hash": "d06c614bff93e6b590fde2d3ef3fe4ba"
+  }
+}
