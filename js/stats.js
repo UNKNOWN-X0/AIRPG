@@ -1,35 +1,18 @@
 function parseStatChanges(text) {
-  // Look for stat change patterns like [HEALTH: -15] or [GOLD: +25]
-  const healthMatch = text.match(/\[HEALTH:\s*([+-]?\d+)\]/i);
-  const goldMatch = text.match(/\[GOLD:\s*([+-]?\d+)\]/i);
-  const attackMatch = text.match(/\[ATTACK:\s*([+-]?\d+)\]/i);
-  const defenseMatch = text.match(/\[DEFENSE:\s*([+-]?\d+)\]/i);
-
-  if (healthMatch) {
-    gameState.player.health = Math.max(
-      0,
-      Math.min(
-        gameState.player.maxHealth,
-        gameState.player.health + parseInt(healthMatch[1]),
-      ),
-    );
-    updateStats();
+  // Apply every tag in narrative order, preserving existing stat bounds.
+  for (const match of text.matchAll(
+    /\[(HEALTH|GOLD|ATTACK|DEFENSE):\s*([+-]?\d+)\]/gi,
+  )) {
+    const stat = match[1].toLowerCase();
+    const value = gameState.player[stat] + Number(match[2]);
+    gameState.player[stat] =
+      stat === "health"
+        ? Math.max(0, Math.min(gameState.player.maxHealth, value))
+        : stat === "gold"
+          ? Math.max(0, value)
+          : value;
   }
-  if (goldMatch) {
-    gameState.player.gold = Math.max(
-      0,
-      gameState.player.gold + parseInt(goldMatch[1]),
-    );
-    updateStats();
-  }
-  if (attackMatch) {
-    gameState.player.attack += parseInt(attackMatch[1]);
-    updateStats();
-  }
-  if (defenseMatch) {
-    gameState.player.defense += parseInt(defenseMatch[1]);
-    updateStats();
-  }
+  updateStats();
 
   // Check for death
   if (gameState.player.health <= 0) {
@@ -59,4 +42,3 @@ function updateStats() {
     healthSpan.style.color = "#4caf50";
   }
 }
-

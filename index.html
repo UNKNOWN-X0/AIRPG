@@ -14,11 +14,15 @@
           <input
             type="password"
             id="apiKeyInput"
+            aria-label="Anthropic API key"
+            aria-describedby="apiKeyStatus"
             placeholder="Enter your Anthropic API Key"
           />
           <button id="saveApiKey">Save Key</button>
+          <p id="apiKeyStatus" role="status"></p>
           <p class="api-hint">
-            Get your API key from
+            Your key is kept only until you reload. Requests go directly to
+            Anthropic. Get your API key from
             <a href="https://console.anthropic.com/" target="_blank"
               >console.anthropic.com</a
             >
@@ -30,7 +34,7 @@
         <div class="stats-panel">
           <div class="stat">
             <span class="stat-label">❤️ Health:</span>
-            <span id="health">100</span>
+            <span id="health">100/100</span>
           </div>
           <div class="stat">
             <span class="stat-label">⚔️ Attack:</span>

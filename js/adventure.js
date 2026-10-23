@@ -2,7 +2,9 @@ let adventureRequestPending = false;
 
 function setAdventureBusy(busy) {
   adventureRequestPending = busy;
-  const disabled = busy || gameState.player.health <= 0;
+  saveApiKeyBtn.disabled = busy;
+  const disabled =
+    busy || !gameState.adventureStarted || gameState.player.health <= 0;
   playerInput.disabled = disabled;
   sendActionBtn.disabled = disabled;
   quickBtns.forEach((button) => {
@@ -12,53 +14,76 @@ function setAdventureBusy(busy) {
 }
 
 async function startAdventure() {
-  if (adventureRequestPending || gameState.player.health <= 0) return;
+  if (
+    adventureRequestPending ||
+    gameState.adventureStarted ||
+    gameState.player.health <= 0
+  )
+    return;
   setAdventureBusy(true);
 
   try {
     const response = await callClaudeAPI(gameState.conversationHistory);
+    gameState.adventureStarted = true;
     addMessage(response, "ai");
+    parseStatChanges(response);
     gameState.conversationHistory.push({
       role: "assistant",
       content: response,
     });
   } catch (error) {
-    addMessage(`Error: ${error.message}. Please check your API key.`, "system");
+    addMessage(
+      `Error: ${error.message}. Check your key or connection and try again.`,
+      "system",
+    );
+    apiSetup.style.display = "flex";
+  } finally {
+    setAdventureBusy(false);
   }
-
-  setAdventureBusy(false);
 }
 
 async function sendPlayerAction() {
-  if (adventureRequestPending || gameState.player.health <= 0) return;
+  if (
+    adventureRequestPending ||
+    !gameState.adventureStarted ||
+    gameState.player.health <= 0
+  )
+    return;
   const action = playerInput.value.trim();
   if (!action) return;
 
-  addMessage(action, "player");
   playerInput.value = "";
   setAdventureBusy(true);
 
-  // Add player action to history
-  gameState.conversationHistory.push({
+  // Commit the turn only after a successful response.
+  const turn = {
     role: "user",
-    content: `Player action: ${action}\n\nCurrent stats - Health: ${gameState.player.health}/${gameState.player.maxHealth}, Attack: ${gameState.player.attack}, Defense: ${gameState.player.defense}, Gold: ${gameState.player.gold}, Inventory: ${gameState.player.inventory.join(", ")}`,
-  });
+    content: `Player action: ${action}\n\nCurrent stats - Health: ${gameState.player.health}/${gameState.player.maxHealth}, Attack: ${gameState.player.attack}, Defense: ${gameState.player.defense}, Gold: ${gameState.player.gold}`,
+  };
 
   try {
-    const response = await callClaudeAPI(gameState.conversationHistory);
-
-    // Parse stat changes from response
-    parseStatChanges(response);
-
-    addMessage(response, "ai");
-    gameState.conversationHistory.push({
+    const response = await callClaudeAPI([
+      ...gameState.conversationHistory,
+      turn,
+    ]);
+    gameState.conversationHistory.push(turn, {
       role: "assistant",
       content: response,
     });
-  } catch (error) {
-    addMessage(`Error: ${error.message}`, "system");
-  }
+    addMessage(action, "player");
+    addMessage(response, "ai");
 
-  setAdventureBusy(false);
+    // Parse stat changes from response
+    parseStatChanges(response);
+  } catch (error) {
+    playerInput.value = action;
+    apiSetup.style.display = "flex";
+    addMessage(
+      `Error: ${error.message}. Your action has not been saved; you can retry.`,
+      "system",
+    );
+  } finally {
+    setAdventureBusy(false);
+  }
   if (!playerInput.disabled) playerInput.focus();
 }

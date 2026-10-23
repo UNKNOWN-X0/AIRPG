@@ -5,6 +5,10 @@ function initGame() {
     showGameArea();
   }
 
+  updateStats();
+  apiKeyInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") saveApiKey();
+  });
   saveApiKeyBtn.addEventListener("click", saveApiKey);
   sendActionBtn.addEventListener("click", sendPlayerAction);
   playerInput.addEventListener("keypress", (e) => {
@@ -43,21 +47,25 @@ Start the adventure now in a fantasy setting.`,
 }
 
 function saveApiKey() {
+  if (adventureRequestPending) return;
+  const status = document.getElementById("apiKeyStatus");
   const key = apiKeyInput.value.trim();
   if (!key) {
-    alert("Please enter a valid API key");
+    status.textContent = "Please enter your API key.";
+    apiKeyInput.focus();
     return;
   }
 
+  status.textContent = "";
   gameState.apiKey = key;
+  apiKeyInput.value = "";
   showGameArea();
-  startAdventure();
+  if (!gameState.adventureStarted) startAdventure();
+  else setAdventureBusy(false);
 }
 
 function showGameArea() {
   apiSetup.style.display = "none";
   gameArea.style.display = "block";
-  playerInput.disabled = false;
-  sendActionBtn.disabled = false;
+  setAdventureBusy(false);
 }
-

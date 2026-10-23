@@ -1,6 +1,7 @@
 // Game State
 const gameState = {
   apiKey: "",
+  adventureStarted: false,
   player: {
     health: 100,
     maxHealth: 100,
@@ -11,4 +12,3 @@ const gameState = {
   },
   conversationHistory: [],
 };
-
