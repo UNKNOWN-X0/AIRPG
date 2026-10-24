@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "AI RPG Adventure — Browser Runtime",
+    "output": ".archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/UNKNOWN-X0/AIRPG.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "38025025a56d79900786b7b59fbbd67691afe908"
+    }
+  },
+  "components": [
+    {
+      "id": "player",
+      "type": "external",
+      "label": "Player",
+      "sublabel": "Chooses actions and reads the story",
+      "sources": [
+        {
+          "path": "README.md",
+          "line": 8,
+          "end_line": 10,
+          "label": "Player journey"
+        },
+        {
+          "path": "README.md",
+          "line": 14,
+          "end_line": 19,
+          "label": "Game features"
+        }
+      ],
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        140,
+        80
+      ]
+    },
+    {
+      "id": "game-page",
+      "type": "frontend",
+      "label": "Game page",
+      "sublabel": "UI, turns, response-tag updates",
+      "sources": [
+        {
+          "path": "index.html",
+          "line": 13,
+          "end_line": 80,
+          "label": "Key and game UI"
+        },
+        {
+          "path": "js/adventure.js",
+          "line": 45,
+          "end_line": 77,
+          "label": "Player turn flow"
+        },
+        {
+          "path": "js/stats.js",
+          "line": 1,
+          "end_line": 15,
+          "label": "Apply response tags"
+        }
+      ],
+      "pos": [
+        280,
+        40
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "session-state",
+      "type": "frontend",
+      "label": "Page session state",
+      "sublabel": "Key, conversation, stats, inventory",
+      "tag": "In memory",
+      "sources": [
+        {
+          "path": "js/state.js",
+          "line": 1,
+          "end_line": 14,
+          "label": "Game state object"
+        },
+        {
+          "path": "js/setup.js",
+          "line": 49,
+          "end_line": 64,
+          "label": "Key remains in state"
+        },
+        {
+          "path": "README.md",
+          "line": 27,
+          "end_line": 31,
+          "label": "Session and API use"
+        }
+      ],
+      "pos": [
+        280,
+        230
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "api-client",
+      "type": "frontend",
+      "label": "Anthropic API client",
+      "sublabel": "Direct Messages API requests",
+      "sources": [
+        {
+          "path": "js/api.js",
+          "line": 1,
+          "end_line": 17,
+          "label": "Direct API request"
+        },
+        {
+          "path": "js/api.js",
+          "line": 18,
+          "end_line": 40,
+          "label": "Read text response"
+        }
+      ],
+      "pos": [
+        610,
+        40
+      ],
+      "size": [
+        190,
+        80
+      ]
+    },
+    {
+      "id": "anthropic-api",
+      "type": "external",
+      "label": "Anthropic Messages API",
+      "sublabel": "Claude response text",
+      "sources": [
+        {
+          "path": "js/api.js",
+          "line": 7,
+          "end_line": 16,
+          "label": "Endpoint and request"
+        }
+      ],
+      "pos": [
+        900,
+        40
+      ],
+      "size": [
+        200,
+        80
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Browser page session",
+      "wraps": [
+        "game-page",
+        "session-state",
+        "api-client"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "player-to-page",
+      "from": "player",
+      "to": "game-page",
+      "label": "key + turns"
+    },
+    {
+      "id": "page-to-state",
+      "from": "game-page",
+      "to": "session-state",
+      "label": "update state"
+    },
+    {
+      "id": "state-to-client",
+      "from": "session-state",
+      "to": "api-client",
+      "label": "key + history"
+    },
+    {
+      "id": "page-to-client",
+      "from": "game-page",
+      "to": "api-client",
+      "label": "send turn"
+    },
+    {
+      "id": "client-to-api",
+      "from": "api-client",
+      "to": "anthropic-api",
+      "label": "HTTPS POST"
+    },
+    {
+      "id": "api-to-client",
+      "from": "anthropic-api",
+      "to": "api-client",
+      "label": "text response"
+    },
+    {
+      "id": "client-to-page",
+      "from": "api-client",
+      "to": "game-page",
+      "label": "story text"
+    },
+    {
+      "id": "page-to-player",
+      "from": "game-page",
+      "to": "player",
+      "label": "story / stats"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Key and usage",
+      "items": [
+        "The API key stays only in page memory and is cleared when the page reloads. (README.md:27–29; js/state.js:2–4; js/setup.js:49–62)",
+        "The browser sends requests directly to Anthropic; usage may incur charges under the player's Anthropic account. (README.md:29–31; js/api.js:7–16)"
+      ]
+    }
+  ]
+}

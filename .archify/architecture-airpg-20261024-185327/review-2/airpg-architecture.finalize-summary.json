@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+    "sha256": "3d376de8f21d703953919e4462ab7642d0ecf2fa9eb9878a39a88ece16f70e4a",
+    "bytes": 5041
+  },
+  "artifact": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+    "sha256": "a76176798e86b7fc19fe9058e287a38e3cf570b87400d5efb8783c815b6e3ee9",
+    "bytes": 821199
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome transport: Node v22.23.1, libuv 1.51.0, darwin; pid=31250, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.finalize.json",
+    "summaryReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-24T15:48:29.002Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1106,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}
