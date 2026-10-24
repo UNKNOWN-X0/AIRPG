@@ -64,5 +64,83 @@
     "seen": 1792798298.0234098,
     "ast_hash": "d06c614bff93e6b590fde2d3ef3fe4ba",
     "semantic_hash": "d06c614bff93e6b590fde2d3ef3fe4ba"
+  },
+  ".archify/architecture-airpg-20261024-185327/airpg-architecture.delivery.json": {
+    "mtime": 1792867771.936913,
+    "seen": 1792874618.515405,
+    "ast_hash": "588029eda437eff16128c4cb8334508f",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/candidate.json": {
+    "mtime": 1792862581.248101,
+    "seen": 1792874618.5154078,
+    "ast_hash": "2f6f87c3297a2fd974aadc7a4b96b1c9",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.browser-check.json": {
+    "mtime": 1792862582.6141846,
+    "seen": 1792874618.51541,
+    "ast_hash": "97ed9027c0be81ecf9f4a7f3382f2235",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.finalize-summary.json": {
+    "mtime": 1792862582.6414204,
+    "seen": 1792874618.515411,
+    "ast_hash": "2c1d1dee589ea7f5d7cf2ef0a5d84904",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-2/airpg-architecture.finalize.json": {
+    "mtime": 1792862582.6226318,
+    "seen": 1792874618.515411,
+    "ast_hash": "3faaf8b832ca3dc870c8ad31e0270c17",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.browser-check.json": {
+    "mtime": 1792867773.7949183,
+    "seen": 1792874618.5154119,
+    "ast_hash": "31b3b0d7d6976982a06cd4b8c50d8b52",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.finalize-summary.json": {
+    "mtime": 1792867773.8564835,
+    "seen": 1792874618.515413,
+    "ast_hash": "abe8af882b48dd5354604497c38cf9ce",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.finalize.json": {
+    "mtime": 1792867773.8432786,
+    "seen": 1792874618.515414,
+    "ast_hash": "244f7f9f7602ca84ae7b5abad636b098",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1792798229.3898883,
+    "seen": 1792874618.515415,
+    "ast_hash": "861d739e89ffbf840768df26e75b610b",
+    "semantic_hash": ""
+  },
+  ".codex/hooks.json": {
+    "mtime": 1792798229.31018,
+    "seen": 1792874618.515415,
+    "ast_hash": "1f5eb06d715397e6594b256c05469c6d",
+    "semantic_hash": ""
+  },
+  ".archify/architecture-airpg-20261024-185327/airpg-architecture.html": {
+    "mtime": 1792867771.8512523,
+    "seen": 1792874618.515427,
+    "ast_hash": "70ef2e2c32624ce1d24e9e8a5f03b207",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1792868331.1539946,
+    "seen": 1792874618.515428,
+    "ast_hash": "1fd840c3868657581070dd0b1de8365e",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1792798229.3893962,
+    "seen": 1792874618.515429,
+    "ast_hash": "67d88e9d0760c3ba54c75dfd9551c1c5",
+    "semantic_hash": ""
   }
 }

@@ -1,23 +1,31 @@
 # Graph Report - AIRPG  (2026-10-24)
 
 ## Corpus Check
-- Corpus is ~2,424 words - fits in a single context window. You may not need a graph.
+- 22 files · ~67,727 words
+- Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 3 file(s) not represented in the graph (top: (none) 2, .css 1)
 
 ## Summary
-- 70 nodes · 70 edges · 11 communities (7 shown, 4 thin omitted)
+- 75 nodes · 73 edges · 12 communities (6 shown, 6 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
-- Token cost: unavailable (agent usage metadata was not exposed)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `17cfc616`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - AI RPG Interface
 - DOM Bindings
 - API and Functionality Tests
-- GitHub Pages Workflow
-- CI Build Steps
+- Jekyll CI Workflow
+- CI Build Job
 - Adventure Flow
-- Setup and API Key
 - Character Stats
 - Game State
+- Project instructions
+- CLAUDE.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `AI RPG Adventure page` - 5 edges
@@ -29,22 +37,22 @@
 7. `saveApiKey()` - 3 edges
 8. `showGameArea()` - 3 edges
 9. `el()` - 3 edges
-10. `AI RPG Adventure README` - 3 edges
+10. `Browser-based fantasy RPG` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `initGame()` --indirect_call--> `sendPlayerAction()`  [INFERRED]
   js/setup.js → js/adventure.js
-- `Story response panel` --references--> `Claude as dungeon master`  [EXTRACTED]
+- `Anthropic API key entry` --references--> `API key stays in memory for the page session`  [EXTRACTED]
   index.html → README.md
 - `Game stats panel` --references--> `Health, attack, defense, and gold stats`  [EXTRACTED]
   index.html → README.md
-- `Anthropic API key entry` --references--> `API key stays in memory for the page session`  [EXTRACTED]
+- `Story response panel` --references--> `Claude as dungeon master`  [EXTRACTED]
   index.html → README.md
 
 ## Import Cycles
 - None detected.
 
-## Communities (11 total, 4 thin omitted)
+## Communities (12 total, 6 thin omitted)
 
 ### Community 0 - "AI RPG Interface"
 Cohesion: 0.14
@@ -58,37 +66,33 @@ Nodes (13): apiKeyInput, apiSetup, attackSpan, defenseSpan, gameArea, goldSpan, 
 Cohesion: 0.28
 Nodes (3): el(), element(), rpg()
 
-### Community 3 - "GitHub Pages Workflow"
+### Community 3 - "Jekyll CI Workflow"
 Cohesion: 0.25
 Nodes (7): jobs, name, branches, branches, True, pull_request, push
 
-### Community 4 - "CI Build Steps"
+### Community 4 - "CI Build Job"
 Cohesion: 0.33
 Nodes (6): runs-on, steps, build, name, run, uses
 
 ### Community 5 - "Adventure Flow"
-Cohesion: 0.83
-Nodes (3): sendPlayerAction(), setAdventureBusy(), startAdventure()
-
-### Community 6 - "Setup and API Key"
-Cohesion: 1.00
-Nodes (3): initGame(), saveApiKey(), showGameArea()
+Cohesion: 0.43
+Nodes (6): sendPlayerAction(), setAdventureBusy(), startAdventure(), initGame(), saveApiKey(), showGameArea()
 
 ## Knowledge Gaps
-- **5 isolated node(s):** `Free-form player actions`, `Bracketed tags update player stats`, `Browser sends requests directly to Anthropic`, `Player action input`, `Quick action buttons`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 37 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 isolated node(s):** `Player action input`, `Quick action buttons`, `Bracketed tags update player stats`, `Browser sends requests directly to Anthropic`, `Free-form player actions`
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 41 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `build` connect `CI Build Steps` to `GitHub Pages Workflow`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **What connects `Free-form player actions`, `Bracketed tags update player stats`, `Browser sends requests directly to Anthropic` to the rest of the system?**
+- **Why does `build` connect `CI Build Job` to `Jekyll CI Workflow`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **What connects `Player action input`, `Quick action buttons`, `Bracketed tags update player stats` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AI RPG Interface` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
-- **Why does `jobs` connect `GitHub Pages Workflow` to `CI Build Steps`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `jobs` connect `Jekyll CI Workflow` to `CI Build Job`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Should `DOM Bindings` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
