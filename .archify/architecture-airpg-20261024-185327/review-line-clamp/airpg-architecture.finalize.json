@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-24T18:41:48.286Z",
+  "specification": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+    "sha256": "3d376de8f21d703953919e4462ab7642d0ecf2fa9eb9878a39a88ece16f70e4a",
+    "bytes": 5041
+  },
+  "artifact": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+    "sha256": "8fd6c694ee4bf28033e59d3d3ad951396646f6b55b486d5f382ad471d98e6365",
+    "bytes": 820979
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/Users/thanate/.nvm/versions/node/v22.23.1/bin/node",
+        "/Users/thanate/.codex/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/thanate/Developer/Games/AIRPG",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "3d376de8f21d703953919e4462ab7642d0ecf2fa9eb9878a39a88ece16f70e4a",
+          "bytes": 5041
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 401,
+      "command": [
+        "/Users/thanate/.nvm/versions/node/v22.23.1/bin/node",
+        "/Users/thanate/.codex/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/thanate/Developer/Games/AIRPG",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "646554e8-638b-413c-a313-634c39db0575",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+        "output": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "specification": {
+          "sha256": "3d376de8f21d703953919e4462ab7642d0ecf2fa9eb9878a39a88ece16f70e4a",
+          "bytes": 5041
+        },
+        "artifact": {
+          "sha256": "8fd6c694ee4bf28033e59d3d3ad951396646f6b55b486d5f382ad471d98e6365",
+          "bytes": 820979
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/UNKNOWN-X0/AIRPG",
+          "revision": "38025025a56d79900786b7b59fbbd67691afe908",
+          "references": 11
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 143,
+      "command": [
+        "/Users/thanate/.nvm/versions/node/v22.23.1/bin/node",
+        "/Users/thanate/.codex/skills/archify/bin/archify.mjs",
+        "check",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "artifact": {
+          "sha256": "8fd6c694ee4bf28033e59d3d3ad951396646f6b55b486d5f382ad471d98e6365",
+          "bytes": 820979
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 20,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.2,
+            "maxBends": 1,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 100,
+            "minInteriorSegmentPx": null,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 10,
+            "emptyTopRatio": 0.025,
+            "occupiedTop": 10,
+            "viewBoxTop": 0,
+            "canvasHeight": 398,
+            "typicalNodeHeight": 80,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1140,
+            "actualBudgetPx": 1140,
+            "actualReaderWidth": 1170,
+            "desiredReaderWidth": 1170,
+            "viewportCap": 1376,
+            "limit": "source-size",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "player"
+            },
+            "minimumSourceTextPx": 6.2,
+            "minimumProjectedTextPx": 6.2,
+            "semanticTextCount": 19
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "646554e8-638b-413c-a313-634c39db0575"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 40,
+      "command": [
+        "/Users/thanate/.nvm/versions/node/v22.23.1/bin/node",
+        "/Users/thanate/.codex/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+        "--json",
+        "--require-provenance",
+        "--out-dir",
+        "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-line-clamp"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "646554e8-638b-413c-a313-634c39db0575",
+        "artifact": {
+          "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+          "sha256": "8fd6c694ee4bf28033e59d3d3ad951396646f6b55b486d5f382ad471d98e6365",
+          "bytes": 820979
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/browser-check-runtime",
+            "severity": "error",
+            "message": "browser-check could not complete its Chrome inspection.",
+            "subject": {
+              "artifact": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html"
+            },
+            "evidence": {
+              "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome transport: Node v22.23.1, libuv 1.51.0, darwin; pid=8691, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+            },
+            "supportedFixes": [
+              "resolve the reported Chrome inspection error, then rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "directory": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-line-clamp",
+          "receipt": "airpg-architecture.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome transport: Node v22.23.1, libuv 1.51.0, darwin; pid=8691, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      }
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome transport: Node v22.23.1, libuv 1.51.0, darwin; pid=8691, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.finalize.json",
+    "summaryReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/review-line-clamp/airpg-architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-24T18:41:48.990Z",
+  "durationMs": 703,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-24T15:48:29.002Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}
