@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/candidate.json",
+    "sha256": "e7ea4ef07efd705a6e4d5a1b4413c80d0560a29f280cb22be4d7983e53311c1c",
+    "bytes": 11239
+  },
+  "artifact": {
+    "path": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/airpg-architecture.html",
+    "sha256": "02bae84df9737cdf32d8e4c25f6fa7e410138400657a346b1d94f2c53c39da82",
+    "bytes": 840176
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/template-refresh/airpg-architecture.finalize.json",
+    "summaryReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/template-refresh/airpg-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/thanate/Developer/Games/AIRPG/.archify/architecture-airpg-20261024-185327/template-refresh/airpg-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-24T15:48:29.002Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 3085,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "routesOverSuggestedBends": 2
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [],
+      "detours": [
+        {
+          "relationship": {
+            "id": "turn-to-api-client",
+            "from": "turn-coordinator",
+            "to": "anthropic-client",
+            "label": "turn",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "bends": 3,
+          "stretch": 1.129
+        },
+        {
+          "relationship": {
+            "id": "api-client-to-turn",
+            "from": "anthropic-client",
+            "to": "turn-coordinator",
+            "label": "text",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "bends": 3,
+          "stretch": 1.119
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "turn-coordinator → anthropic-client needs 3 bends: move node turn-coordinator or anthropic-client so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "anthropic-client → turn-coordinator needs 3 bends: move node anthropic-client or turn-coordinator so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}
