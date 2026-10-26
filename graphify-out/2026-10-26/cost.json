@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-23T23:31:38.024785+00:00",
+      "input_tokens": null,
+      "output_tokens": null,
+      "files": 11,
+      "note": "agent token usage metadata unavailable"
+    }
+  ],
+  "total_input_tokens": null,
+  "total_output_tokens": null
+}

@@ -1,17 +1,17 @@
-# Graph Report - AIRPG  (2026-10-24)
+# Graph Report - AIRPG  (2026-10-26)
 
 ## Corpus Check
-- 22 files · ~67,727 words
+- 11 files · ~2,512 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 3 file(s) not represented in the graph (top: (none) 2, .css 1)
+- Unclassified: 4 file(s) not represented in the graph (top: (none) 3, .css 1)
 
 ## Summary
-- 75 nodes · 73 edges · 12 communities (6 shown, 6 thin omitted)
+- 73 nodes · 72 edges · 11 communities (6 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `17cfc616`
+- Built from commit: `8bbef330`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,7 +25,6 @@
 - Character Stats
 - Game State
 - Project instructions
-- CLAUDE.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `AI RPG Adventure page` - 5 edges
@@ -52,7 +51,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (12 total, 6 thin omitted)
+## Communities (11 total, 5 thin omitted)
 
 ### Community 0 - "AI RPG Interface"
 Cohesion: 0.14
@@ -80,14 +79,14 @@ Nodes (6): sendPlayerAction(), setAdventureBusy(), startAdventure(), initGame(),
 
 ## Knowledge Gaps
 - **5 isolated node(s):** `Player action input`, `Quick action buttons`, `Bracketed tags update player stats`, `Browser sends requests directly to Anthropic`, `Free-form player actions`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 41 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 39 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `build` connect `CI Build Job` to `Jekyll CI Workflow`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `Player action input`, `Quick action buttons`, `Bracketed tags update player stats` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AI RPG Interface` be split into smaller, more focused modules?**
